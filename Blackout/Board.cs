@@ -18,11 +18,11 @@ namespace Blackout
 
             //Conta quantas peças estão ativas
             //Serve para caso estejam todas, ele sair dps do while
-            for (int i = 0; i < board.GetLength(0); i++) 
+            for (int i = 0; i < newBoard.GetLength(0); i++) 
             { 
-                for (int j = 0; j < board.GetLength(1); j++) 
+                for (int j = 0; j < newBoard.GetLength(1); j++) 
                 { 
-                    board[i, j] = 0; 
+                    newBoard[i, j] = 0; 
                 } 
             }  
 
