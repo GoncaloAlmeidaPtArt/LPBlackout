@@ -11,7 +11,7 @@ namespace Blackout
     {
        
 
-        public int Dificuldade(int dif)
+        public int DificultyInput(int dif)
         {
             while (true)
             {
@@ -30,7 +30,7 @@ namespace Blackout
             }
         }
         
-        public void ListagemBoard(int[,] board)
+        public void ListBoard(int[,] board)
         {
             for (int i = 0; i < board.GetLength(0); i++) 
             { 
@@ -45,6 +45,7 @@ namespace Blackout
          public void ShowGrid(int[,] board)
         {
             Canvas grid = new Canvas(board.Length, board.Length);
+
             for (int x = 0; x < board.GetLength(0); x++) 
             {
                 for (int y = 0; y < board.GetLength(1); y++) 
@@ -70,11 +71,12 @@ namespace Blackout
             Console.WriteLine("Congractulations");
         }
 
-        public void ShowErrorInvalidC0ordinateMensage()
+        public void ShowErrorInvalidCoordinateMensage()
         {
             Console.WriteLine("Coordenada invalida");
         }
-        public (int, int) Coordenadas(int x, int y)
+
+        public (int, int) CoordinatesInput(int x, int y)
         {
             //Pede as cordenadas da peça
             Console.WriteLine("Coloca o Y que desejas alterar");

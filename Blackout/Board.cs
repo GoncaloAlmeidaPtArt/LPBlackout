@@ -8,13 +8,13 @@ namespace Blackout
     public class Board
     {
         
-        public int[,] boardC;
+        public int[,] board;
 
         private PrototypeView view;
 
-        public void Criador(int tamanho)
+        public void CreateBoard(int boardSize)
         {
-            int[,] board = new int[tamanho, tamanho];
+            int[,] newBoard = new int[boardSize, boardSize];
 
             //Conta quantas peças estão ativas
             //Serve para caso estejam todas, ele sair dps do while
@@ -26,15 +26,15 @@ namespace Blackout
                 } 
             }  
 
-            boardC = board;
+            board = newBoard;
         }
 
         public int[,] GetBoard()
         {
-            return boardC;
+            return board;
         }
 
-        public void AlteraValores(int x, int y, int[,] lists1)
+        public void ChangeCellsValue(int x, int y, int[,] board)
         {
             //
             //Estes trys todos basicamente vão verificar se a peça está ativa ou não
@@ -43,35 +43,35 @@ namespace Blackout
             //Caso a peça não exista, ele simplesmente não faz nada (por isso os trys)
             //
 
-            bool erro = false;
+            bool error = false;
             try
             {
-                if(lists1[x,y] == 0)
+                if(board[x,y] == 0)
                 {
-                    lists1[x,y] = 1;
+                    board[x,y] = 1;
                 }
                 else
                 {
-                    lists1[x,y] = 0;
+                    board[x,y] = 0;
                 }
             }
             catch
             {
-                view.ShowErrorInvalidC0ordinateMensage();
-                erro = true;
+                view.ShowErrorInvalidCoordinateMensage();
+                error = true;
             }
 
-            if(erro == false)
+            if(error == false)
             {
                 try
                 {
-                    if(lists1[x+1,y] == 0)
+                    if(board[x+1,y] == 0)
                     {
-                        lists1[x+1,y] = 1;
+                        board[x+1,y] = 1;
                     }
                     else
                     {
-                        lists1[x+1,y] = 0;
+                        board[x+1,y] = 0;
                     }
                 }
                 catch
@@ -81,18 +81,18 @@ namespace Blackout
             }
             
 
-            if(erro == false)
+            if(error == false)
             {
 
                 try
                 {
-                    if(lists1[x-1,y] == 0)
+                    if(board[x-1,y] == 0)
                     {
-                        lists1[x-1,y] = 1;
+                        board[x-1,y] = 1;
                     }
                     else
                     {
-                        lists1[x-1,y] = 0;
+                        board[x-1,y] = 0;
                     }
                 }
                 catch
@@ -101,18 +101,18 @@ namespace Blackout
                 }
             }
 
-            if(erro == false)
+            if(error == false)
             {
 
                 try
                 {
-                    if(lists1[x,y+1] == 0)
+                    if(board[x,y+1] == 0)
                     {
-                        lists1[x,y+1] = 1;
+                        board[x,y+1] = 1;
                     }
                     else
                     {
-                        lists1[x,y+1] = 0;
+                        board[x,y+1] = 0;
                     }
                 }
                 catch
@@ -122,18 +122,18 @@ namespace Blackout
             }
 
 
-            if(erro == false)
+            if(error == false)
             {
 
                 try
                 {
-                    if(lists1[x,y-1] == 0)
+                    if(board[x,y-1] == 0)
                     {
-                        lists1[x,y-1] = 1;
+                        board[x,y-1] = 1;
                     }
                     else
                     {
-                        lists1[x,y-1] = 0;
+                        board[x,y-1] = 0;
                     }
                 }
                 catch
