@@ -62,5 +62,17 @@ namespace Blackout
                 Console.WriteLine();
             }  
         }
+
+        public (int, int) Coordenadas(int x, int y)
+        {
+            //Pede as cordenadas da peça
+            Console.WriteLine("Coloca o X que desejas alterar");
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Coloca o Y que desejas alterar");
+            y = Convert.ToInt32(Console.ReadLine());
+
+            return (x, y);
+
+        }
     }
 }

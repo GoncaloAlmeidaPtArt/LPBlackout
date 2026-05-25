@@ -63,14 +63,7 @@ namespace Blackout
 
         public static void Mostrar(int[,] lists1)
         {
-            for (int i = 0; i < lists1.GetLength(0); i++) 
-            { 
-                for (int j = 0; j < lists1.GetLength(1); j++) 
-                { 
-                    Console.Write(lists1[i, j]); 
-                } 
-                Console.WriteLine();
-            }  
+            
         }
 
         public static (int, int) Coordenadas(int x, int y)

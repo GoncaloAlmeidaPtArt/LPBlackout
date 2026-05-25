@@ -9,20 +9,7 @@ namespace Blackout
     {
         
         public int[,] boardC;
-        /*
-        public Board(int tamanho)
-        {
-            int [,] b = new int[tamanho, tamanho];
-            for (int i = 0; i < board.GetLength(0); i++) 
-                { 
-                    for (int j = 0; j < board.GetLength(1); j++) 
-                    { 
-                        b[i, j] = 0; 
-                    } 
-                }  
-            this.board = b;
-        }
-        */
+
         public void Criador(int tamanho)
         {
             int[,] board = new int[tamanho, tamanho];
@@ -43,6 +30,99 @@ namespace Blackout
         public int[,] GetBoard()
         {
             return boardC;
+        }
+
+        public void AlteraValores(int x, int y, int[,] lists1)
+        {
+            //
+            //Estes trys todos basicamente vão verificar se a peça está ativa ou não
+            //Tanto a peça selecionada com as em volta
+            //Dependendo de como estiver, ele inverte o estado
+            //Caso a peça não exista, ele simplesmente não faz nada (por isso os trys)
+            //
+            try
+            {
+                if(lists1[x,y] == 0)
+                {
+                    lists1[x,y] = 1;
+                }
+                else
+                {
+                    lists1[x,y] = 0;
+                }
+            }
+            catch
+            {
+                
+            }
+
+            try
+            {
+                if(lists1[x+1,y] == 0)
+                {
+                    lists1[x+1,y] = 1;
+                }
+                else
+                {
+                    lists1[x+1,y] = 0;
+                }
+            }
+            catch
+            {
+                
+            }
+
+
+            try
+            {
+                if(lists1[x-1,y] == 0)
+                {
+                    lists1[x-1,y] = 1;
+                }
+                else
+                {
+                    lists1[x-1,y] = 0;
+                }
+            }
+            catch
+            {
+                
+            }
+
+
+            try
+            {
+                if(lists1[x,y+1] == 0)
+                {
+                    lists1[x,y+1] = 1;
+                }
+                else
+                {
+                    lists1[x,y+1] = 0;
+                }
+            }
+            catch
+            {
+                
+            }
+
+
+            try
+            {
+                if(lists1[x,y-1] == 0)
+                {
+                    lists1[x,y-1] = 1;
+                }
+                else
+                {
+                    lists1[x,y-1] = 0;
+                }
+            }
+            catch
+            {
+                
+            }
+            
         }
         
     }
