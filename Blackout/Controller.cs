@@ -69,7 +69,7 @@ namespace Blackout
             {
                 
 
-                view.ListagemBoard(lista);
+                view.ShowGrid(lista);
 
 
                 //Reseta a conagem de peças, para não somar as da jogada anterior
