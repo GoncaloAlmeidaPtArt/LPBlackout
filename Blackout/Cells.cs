@@ -10,7 +10,7 @@ namespace Blackout
         private bool isActive;
         public Cells()
         {
-            isActive = true;
+            isActive = false;
         } 
 
         public void ChangeState()

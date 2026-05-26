@@ -54,7 +54,6 @@ namespace Blackout
                 view.ShowCellsGrid(list);
 
                 int coordinateX = 0;
-
                 int coordinateY = 0;
 
                 bool isVictory = true;
@@ -67,17 +66,14 @@ namespace Blackout
                     break;
                 }
 
-                if(coordinateX == -2 || coordinateY == -2)
+                if(coordinateX == -2 || coordinateY == -2 || 
+                coordinateX < 0 || coordinateX >= list.GetLength(0) ||
+                coordinateY < 0 || coordinateY >= list.GetLength(1))
                 {
                     view.ShowErrorInvalidCoordinateMensage();
                     continue;
                 }
 
-                if(coordinateX < 0 || coordinateX >= list.GetLength(0) || coordinateY < 0 || coordinateY >= list.GetLength(1))
-                {
-                    view.ShowErrorInvalidCoordinateMensage();
-                    continue;
-                }
                 else
                 {
                     board.ChangeBoardCellsValue(coordinateX, coordinateY, list);
@@ -86,14 +82,14 @@ namespace Blackout
                     { 
                         for (int j = 0; j < list.GetLength(1); j++) 
                         { 
-                            if(list[i,j].GetState() == true)
+                            if(list[i,j].GetState() == false)
                             {
                                 isVictory = !isVictory;
                                 break;
                             }  
                         } 
-                      
                     }
+
                     if(isVictory == true)
                     {
                         view.ShowCellsGrid(list);
