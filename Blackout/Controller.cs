@@ -20,8 +20,10 @@ namespace Blackout
         /// <param name="board"></param>
         public void Run(PrototypeView view, Board board)
         {
-            //Ask for it and you'll get a challenging game.
+            //A variable that represents the difficulty level of the game.
             int dificulty = 0;
+
+            //Ask the user to select a difficulty level.
             dificulty = view.DificultyInput(dificulty);
 
             //Create a list that will serve as a board.
