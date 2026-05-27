@@ -8,15 +8,22 @@ namespace Blackout
 {
     public class Controller
     {
+        /// <summary>
+        /// Metodo que roda todo o jogo, do inicio ao fim
+        /// </summary>
+        /// <param name="view"></param>
+        /// <param name="board"></param>
         public void Run(PrototypeView view, Board board)
         {
+            //Pede e recebe a dificuldade do jogo
             int dificulty = 0;
             dificulty = view.DificultyInput(dificulty);
 
+            //Cria uma lista que servirá como board
             Cells[,] list;
 
-            bool isChoiceMade = false;
 
+            bool isChoiceMade = false;
             while(isChoiceMade == false)
             {
                 switch (dificulty)
@@ -84,8 +91,7 @@ namespace Blackout
                         { 
                             if(list[i,j].GetState() == false)
                             {
-                                isVictory = !isVictory;
-                                break;
+                                isVictory = false;
                             }  
                         } 
                     }

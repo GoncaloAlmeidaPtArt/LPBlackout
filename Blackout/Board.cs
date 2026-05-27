@@ -8,14 +8,26 @@ namespace Blackout
     public class Board
     {
         private Cells[,] boardCells;
-        public int[,] board;
-
-        private PrototypeView view;
 
 
         public void CreateBoardOfCells(int boardSize)
         {
             Cells[,] newCellsBoard = new Cells[boardSize, boardSize];
+            int numerocliques;
+            Random random = new Random();
+
+            if(boardSize == 3)
+            {
+                numerocliques = 3;
+            }
+            else if(boardSize == 5)
+            {
+                numerocliques = 5;
+            }
+            else
+            {
+                numerocliques = 8;
+            }
 
             //Conta quantas peças estão ativas
             //Serve para caso estejam todas, ele sair dps do while
@@ -27,7 +39,17 @@ namespace Blackout
                 } 
             }  
 
+            for(int i = 0; i < numerocliques; i++)
+            {
+                int coluna = random.Next(newCellsBoard.GetLength(1));
+                int linha = random.Next(newCellsBoard.GetLength(0));
+
+                ChangeBoardCellsValue(coluna, linha, newCellsBoard);
+
+            }
+
             boardCells = newCellsBoard;
+
         }
 
 
@@ -47,13 +69,11 @@ namespace Blackout
             try
             {
                 board[x,y].ChangeState();
-            }
-            
+            }   
             catch
             {
                     
             }
-           
             try
             {
                 board[x+1,y].ChangeState();
@@ -62,17 +82,14 @@ namespace Blackout
             {
                     
             }
-            
             try
             {
                 board[x-1,y].ChangeState();
-            }
-                
+            }   
             catch
             {
                     
             }
-
             try
             {
                 board[x,y+1].ChangeState();
@@ -81,7 +98,6 @@ namespace Blackout
             {
                     
             }
-
             try
             {
                 board[x,y-1].ChangeState();
@@ -90,9 +106,6 @@ namespace Blackout
             {
                     
             }
-            
-            
         }
-        
     }
 }

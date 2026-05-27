@@ -10,7 +10,11 @@ namespace Blackout
     public class PrototypeView : IView
     {
        
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dif"></param>
+        /// <returns></returns>
         public int DificultyInput(int dif)
         {
             while (true)
