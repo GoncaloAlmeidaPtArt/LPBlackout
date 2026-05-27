@@ -9,12 +9,6 @@ namespace Blackout
     {
         //Board contains a array of arrays of cells, witch represents the board.
         private Cells[,] boardCells;
-<<<<<<< HEAD
-
-        //Board contains an instance of view to show the board to the player.
-        private PrototypeView view;
-=======
->>>>>>> 15addd2fbc38ee256594c54b2f4f21b2c2c82493
 
         /// <summary>
         /// This method creates a board of cells with the size acording to the 
@@ -90,21 +84,16 @@ namespace Blackout
             {  
                 //Change the state of the cell corresponding to the coordinates selected.
                 board[x,y].ChangeState();
-<<<<<<< HEAD
-            }
-=======
-            }   
->>>>>>> 15addd2fbc38ee256594c54b2f4f21b2c2c82493
+
             catch
             {
                     
             }
-<<<<<<< HEAD
+
            
             //Try to change the state of the cell at the right side of the 
             // selected cell if they exist, otherwise do nothing.
-=======
->>>>>>> 15addd2fbc38ee256594c54b2f4f21b2c2c82493
+
             try
             {
                 //Change the state of the cell corresponding to the coordinates selected.
@@ -114,12 +103,11 @@ namespace Blackout
             {
                     
             }
-<<<<<<< HEAD
+
             
             //Try to change the state of the cell at the left side of the 
             // selected cell if they exist, otherwise do nothing.
-=======
->>>>>>> 15addd2fbc38ee256594c54b2f4f21b2c2c82493
+
             try
             {
                 //Change the state of the cell corresponding to the coordinates selected.
@@ -129,12 +117,11 @@ namespace Blackout
             {
                     
             }
-<<<<<<< HEAD
+
 
             //Try to change the state of the cell at the bottom side of the 
             // selected cell if they exist, otherwise do nothing.
-=======
->>>>>>> 15addd2fbc38ee256594c54b2f4f21b2c2c82493
+
             try
             {
                 //Change the state of the cell corresponding to the coordinates selected.
@@ -144,12 +131,10 @@ namespace Blackout
             {
                     
             }
-<<<<<<< HEAD
+
 
             //Try to change the state of the cell at the top side of the 
             // selected cell if they exist, otherwise do nothing.
-=======
->>>>>>> 15addd2fbc38ee256594c54b2f4f21b2c2c82493
             try
             {
                 //Change the state of the cell corresponding to the coordinates selected.
