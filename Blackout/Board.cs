@@ -35,8 +35,8 @@ namespace Blackout
                 numerocliques = 8;
             }
 
-            //Conta quantas peças estão ativas
-            //Serve para caso estejam todas, ele sair dps do while
+            //Count how many pieces are active
+            //This is in case they're all there, so it exits the while loop
             for (int i = 0; i < newCellsBoard.GetLength(0); i++) 
             { 
                 for (int j = 0; j < newCellsBoard.GetLength(1); j++) 
@@ -45,6 +45,7 @@ namespace Blackout
                 } 
             }  
 
+            //Based on the difficulty of the board, make an X with a random number of clicks
             for(int i = 0; i < numerocliques; i++)
             {
                 int coluna = random.Next(newCellsBoard.GetLength(1));
